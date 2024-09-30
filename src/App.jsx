@@ -10,9 +10,12 @@ import CountryList from "./components/CountryList";
 import City from "./components/City";
 import Form from "./components/Form";
 import { CitiesProvider } from "./context/CitiesContext";
+import { AuthProvider } from "./context/AuthContext";
+import Protected from "./components/Protected";
 
 export default function App() {
   return (
+    <AuthProvider>
     <CitiesProvider>
       <BrowserRouter>
         <Routes>
@@ -21,7 +24,9 @@ export default function App() {
           <Route path="pricing" element={<Pricing />} />
           <Route path="product" element={<Product />} />
           <Route path="login" element={<Login />} />
-          <Route path="app" element={<AppLayout />}>
+          <Route path="app" element={ <Protected>
+            <AppLayout />
+          </Protected> }>
             {/* <Route index element={<CityList cities={cities} isLoading={isLoading}/>}/> */}
             <Route index element={<Navigate replace to="cities" />} />
             <Route path="cities" element={<CityList />} />
@@ -34,5 +39,6 @@ export default function App() {
         </Routes>
       </BrowserRouter>
     </CitiesProvider>
+    </AuthProvider>
   );
 }

@@ -35,6 +35,18 @@
         "lng": 13.376933665713324
       },
       "id": "98443197"
+    },
+    {
+      "id": "3e15",
+      "cityName": "Gironde estuary and Pertuis sea Marine Nature Park",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2024-09-26T18:44:04.363Z",
+      "notes": "",
+      "position": {
+        "lat": "46.28622391806708",
+        "lng": "-1.8676757812500002"
+      }
     }
   ]
 }
